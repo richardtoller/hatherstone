@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale | default "en-US" }}">
+<head>
+{{- with site.Params.googleAnalyticsID }}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ . }}');
+</script>
+{{- end }}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ block "doctitle" . }}{{ .Title }}{{ end }} &#8211; {{ site.Title }}{{ end }}</title>
+<meta name="robots" content="max-image-preview:large">
+<link rel="canonical" href="{{ .Permalink }}">
+{{ partial "head-styles.html" . }}
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js"></script>
+<script>window.metaslider_jQuery = window.jQuery;</script>
+<script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+</head>
+
+<body class="{{ block "bodyclass" . }}{{ end }} custom-background wp-custom-logo wp-embed-responsive wp-theme-storefront wp-child-theme-storefront_child theme-storefront metaslider-plugin storefront-full-width-content storefront-align-wide right-sidebar">
+
+<div id="page" class="hfeed site">
+{{ partial "header.html" . }}
+
+	<div id="content" class="site-content" tabindex="-1">
+		<div class="col-full">
+
+{{ block "main" . }}{{ end }}
+
+		</div><!-- .col-full -->
+	</div><!-- #content -->
+
+{{ partial "footer.html" . }}
+</div><!-- #page -->
+
+{{ block "footer-extra" . }}{{ end }}
+<script id="storefront-navigation-js" src="/wp-content/themes/storefront/assets/js/navigation.min.js"></script>
+{{ block "footer-js" . }}{{ end }}
+</body>
+</html>

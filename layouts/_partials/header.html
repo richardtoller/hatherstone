@@ -1,0 +1,22 @@
+	<header id="masthead" class="site-header" role="banner" style="">
+
+		<div class="col-full">		<a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+				<div class="site-branding">
+			<a href="/" class="custom-logo-link" rel="home"{{ if .IsHome }} aria-current="page"{{ end }}><img width="{{ site.Params.logoWidth }}" height="{{ site.Params.logoHeight }}" src="{{ site.Params.logo }}" class="custom-logo" alt="{{ site.Title }}" decoding="async" srcset="/wp-content/uploads/2024/01/hm_default_logo_black-1.png 351w, /wp-content/uploads/2024/01/hm_default_logo_black-1-300x62.png 300w, /wp-content/uploads/2024/01/hm_default_logo_black-1-324x67.png 324w" sizes="(max-width: 351px) 100vw, 351px" /></a>		</div>
+			</div><div class="storefront-primary-navigation"><div class="col-full">		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary Navigation">
+		<button id="site-navigation-menu-toggle" class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span>Menu</span></button>
+			<div class="primary-navigation"><ul id="menu-primary" class="menu">
+{{- $page := . }}
+{{- range site.Menus.main }}
+{{- $current := or ($page.IsMenuCurrent "main" .) (and $page.IsHome (eq .URL "/")) }}
+<li class="menu-item menu-item-type-custom menu-item-object-custom{{ if $current }} current-menu-item current_page_item{{ end }}{{ if eq .URL "/" }} menu-item-home{{ end }}"><a href="{{ .URL }}"{{ if $current }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+{{- end }}
+</ul></div><div class="menu"><ul>
+{{- range site.Menus.handheld }}
+<li class="{{ if $page.IsMenuCurrent "handheld" . }}current_page_item{{ else }}page_item{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
+{{- end }}
+</ul></div>
+		</nav><!-- #site-navigation -->
+			</div></div>
+	</header><!-- #masthead -->

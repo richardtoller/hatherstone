@@ -1,0 +1,50 @@
+{{ define "bodyclass" }}home wp-singular page-template-default page page-id-{{ .Params.wpID }}{{ end }}
+{{ define "main" }}
+{{- $s := .Params.slider }}
+{{- $c := partial "slider.html" $s }}
+{{- partial "page-article.html" (dict "page" . "content" $c) }}
+{{ end }}
+{{ define "footer-extra" }}
+<link rel="stylesheet" id="metaslider-flex-slider-css" href="/wp-content/plugins/ml-slider/assets/sliders/flexslider/flexslider.css" media="all">
+<link rel="stylesheet" id="metaslider-public-css" href="/wp-content/plugins/ml-slider/assets/metaslider/public.min.css" media="all">
+<style id="metaslider-public-inline-css">
+@media only screen and (max-width: 767px) { .hide-arrows-smartphone .flex-direction-nav, .hide-navigation-smartphone .flex-control-paging, .hide-navigation-smartphone .flex-control-nav, .hide-navigation-smartphone .filmstrip, .hide-caption-smartphone .caption-wrap, .hide-slideshow-smartphone, .metaslider-hidden-content.hide-smartphone{ display: none!important; }}@media only screen and (min-width : 768px) and (max-width: 1023px) { .hide-arrows-tablet .flex-direction-nav, .hide-navigation-tablet .flex-control-paging, .hide-navigation-tablet .flex-control-nav, .hide-navigation-tablet .filmstrip, .hide-caption-tablet .caption-wrap, .hide-slideshow-tablet, .metaslider-hidden-content.hide-tablet{ display: none!important; }}@media only screen and (min-width : 1024px) and (max-width: 1439px) { .hide-arrows-laptop .flex-direction-nav, .hide-navigation-laptop .flex-control-paging, .hide-navigation-laptop .flex-control-nav, .hide-navigation-laptop .filmstrip, .hide-caption-laptop .caption-wrap, .hide-slideshow-laptop, .metaslider-hidden-content.hide-laptop{ display: none!important; }}@media only screen and (min-width : 1440px) { .hide-arrows-desktop .flex-direction-nav, .hide-navigation-desktop .flex-control-paging, .hide-navigation-desktop .flex-control-nav, .hide-navigation-desktop .filmstrip, .hide-caption-desktop .caption-wrap, .hide-slideshow-desktop, .metaslider-hidden-content.hide-desktop{ display: none!important; }}
+</style>
+{{ end }}
+{{ define "footer-js" }}
+{{- $s := .Params.slider }}
+<script>var wpData = {"baseUrl":""};</script>
+<script id="metaslider-script-js" src="/wp-content/plugins/ml-slider/assets/metaslider/script.min.js"></script>
+<script id="metaslider-easing-js" src="/wp-content/plugins/ml-slider/assets/easing/jQuery.easing.min.js"></script>
+<script id="metaslider-flex-slider-js" src="/wp-content/plugins/ml-slider/assets/sliders/flexslider/jquery.flexslider.min.js"></script>
+<script>
+jQuery(function ($) {
+	var $s = $('#metaslider_{{ $s.id }}');
+	$s.addClass('flexslider');
+	$s.flexslider({
+		slideshowSpeed: {{ $s.speed }},
+		animation: "slide",
+		controlNav: false,
+		directionNav: true,
+		pauseOnHover: true,
+		direction: "horizontal",
+		reverse: false,
+		keyboard: true,
+		touch: true,
+		animationSpeed: {{ $s.animationSpeed }},
+		prevText: "Previous",
+		nextText: "Next",
+		smoothHeight: false,
+		fadeFirstSlide: false,
+		easing: "linear",
+		slideshow: true,
+		pausePlay: false,
+		start: function (slider) {
+			slider.find('.flex-prev').attr('aria-label', 'Previous');
+			slider.find('.flex-next').attr('aria-label', 'Next');
+		}
+	});
+	$(document).trigger('metaslider/initialized', '#metaslider_{{ $s.id }}');
+});
+</script>
+{{ end }}

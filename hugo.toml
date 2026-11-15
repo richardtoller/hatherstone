@@ -1,0 +1,44 @@
+baseURL = "https://hatherstone.com/"
+locale = "en-US"
+title = "hatherstone.com"
+enableRobotsTXT = true
+disableKinds = ["rss", "taxonomy", "term"]
+
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  googleAnalyticsID = "G-HKWFBLD4J1"
+  logo = "/wp-content/uploads/2024/01/hm_default_logo_black-1.png"
+  logoWidth = 351
+  logoHeight = 73
+  [[params.social]]
+    name = "facebook"
+    url = "https://www.facebook.com/hatherstone"
+    icon = "/images/Facebook512px.png"
+  [[params.social]]
+    name = "instagram"
+    url = "https://www.instagram.com/hatherstone"
+    icon = "/images/Instagram512px.png"
+
+# Desktop "Primary" menu (as configured in WordPress)
+[[menus.main]]
+  name = "Home"
+  url = "/"
+  identifier = "home"
+  weight = 1
+
+# Fallback page list shown by Storefront on handheld devices
+[[menus.handheld]]
+  name = "Home"
+  pageRef = "/"
+  weight = 1
+[[menus.handheld]]
+  name = "Contact us"
+  pageRef = "/contact-us"
+  weight = 2
+[[menus.handheld]]
+  name = "Maintenance"
+  pageRef = "/maintenance"
+  weight = 3

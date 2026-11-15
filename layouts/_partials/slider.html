@@ -1,0 +1,19 @@
+{{- $id := .id -}}
+{{- $out := "" -}}
+{{- $out = printf `<div id="metaslider-id-%v" style="width: 100%%;" class="ml-slider-3-114-0 metaslider metaslider-flex metaslider-%v ml-slider ms-theme-default nav-hidden" role="region" aria-label="homepageslideshow" data-height="300" data-width="700">
+    <div id="metaslider_container_%v">
+        <div id="metaslider_%v">
+            <ul class='slides'>` $id $id $id $id -}}
+{{- range $i, $sl := .slides -}}
+{{- $ext := path.Ext $sl.image -}}
+{{- $stem := strings.TrimSuffix $ext $sl.image -}}
+{{- $srcset := printf "%s 1999w, %s-300x212%s 300w, %s-1024x724%s 1024w, %s-768x543%s 768w, %s-1536x1086%s 1536w, %s-324x229%s 324w, %s-416x294%s 416w" $sl.image $stem $ext $stem $ext $stem $ext $stem $ext $stem $ext $stem $ext -}}
+{{- $out = printf `%s
+                <li style="display: %s; width: 100%%;" class="slide-%v ms-image " aria-roledescription="slide" data-slide-type="image"><img %sdecoding="async" width="1999" height="1414" src="%s" class="slider-%v slide-%v msDefaultImage" alt="" title="%s" srcset="%s" sizes="(max-width: 1999px) 100vw, 1999px" /></li>` $out (cond (eq $i 0) "block" "none") $sl.id (cond (eq $i 0) `fetchpriority="high" ` "") $sl.image $id $sl.id $sl.title $srcset -}}
+{{- end -}}
+{{- $out = printf `%s
+            </ul>
+        </div>
+    </div>
+</div>` $out -}}
+{{- return ($out | safeHTML) -}}

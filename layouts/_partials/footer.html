@@ -1,0 +1,24 @@
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="col-full">
+
+		<div class="site-info">
+			<div class="footer_sm_row">
+				<div class="footer_sm_col"> </div>
+				<div class="footer_sm_col"> </div>
+				<div class="footer_sm_col"> </div>
+				<div class="footer_sm_col"> </div>
+				<div class="footer_sm_col"> </div>
+{{- range site.Params.social }}
+				<div class="footer_sm_col">
+					 <a href="{{ .url }}" target="_blank"><img alt="{{ .name }} icon" src="{{ .icon }}" width="25" height="25" border="0"></a>
+				</div>
+{{- end }}
+				<div class="footer_sm_col"> </div>
+				<div class="footer_sm_col"> </div>
+				<div class="footer_sm_col"> </div>
+				<div class="footer_sm_col"> </div>
+			</div>
+		</div><!-- .site-info -->
+
+		</div><!-- .col-full -->
+	</footer><!-- #colophon -->

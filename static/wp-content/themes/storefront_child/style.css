@@ -1,0 +1,565 @@
+/*
+Theme name: Storefront Child
+Version: 1.0
+Description: Cooper and Toller customisation of Storefront theme
+Template: storefront
+Author: Richard Toller
+*/
+
+/* table */
+.hentry .entry-content .wp-block-table td, .hentry .entry-content .wp-block-table th, .editor-styles-wrapper .wp-block-table td, .editor-styles-wrapper .wp-block-table th {
+    border: 0;
+    padding: 0.3em 1.41575em;
+    word-break: normal;
+}
+
+/* hide mailchimp button on mobile */
+@media all and (max-width: 768px){
+  .bff_button {
+		display: none !important;
+	}
+}
+
+
+.storefront-breadcrumb {
+    display: none;
+}
+
+/* hide all the product stuff on homepage */
+.storefront-product-section {
+    display: none;
+}
+
+/* don't need this */
+.woocommerce-result-count {
+  display: none;
+}
+
+/* align woocommerce quantity field */
+.archive .quantity { display: inline-block; }
+
+/* product table styles */
+.wcpt-table, .wcpt-table .wcpt-cell, .wcpt-table .wcpt-heading {
+   /* table-layout: fixed;*/
+   /* border-style: solid;*/
+   /* line-height: 1.25em;*/
+   /* border-right-width: 0;*/
+    /*width: 50% !important;*/
+    /*text-align: center;*/
+    /*margin-left: 25%;*/
+    /*margin-right: 25% !important;*/
+}
+
+@media only screen and (max-width: 768px) {
+  .wcpt-table, .wcpt-table .wcpt-cell, .wcpt-table .wcpt-heading {
+    font-size: 85%;
+  }
+}
+
+/* hide footer basket stuff on handheld */
+.storefront-handheld-footer-bar {
+  display: none !important;
+}
+
+/* product table customisations */
+.wcpt-cw-footer {
+	display: none;
+}
+
+/* hide "Extra charges may apply" text */
+.wcpt-cw-footer {
+  display: none;
+}
+
+.woocommerce-additional-fields {
+  display: none;
+}
+
+.wcpt-cart-widget {
+  background-color: #1D5D70 !important;
+  border-color: rgba(0, 0, 0, .1);
+}
+
+@media only screen and (max-width: 768px) {
+  .wcpt-table, .wcpt-table .wcpt-cell, .wcpt-table .wcpt-heading {
+    font-size: 85%;
+  }
+}
+
+
+.site-header .site-branding {
+    float: left;
+    width: 40%;
+}
+
+wp-block-columns {
+  display: flex;
+  margin-bottom: -2.1em;
+  box-sizing: border-box;
+  flex-wrap: wrap !important;
+  align-items: normal !important;
+}
+
+
+/* add padding below header on mobile */
+@media all and (max-width: 768px){
+  .site-header .site-logo-anchor img, .site-header .site-logo-link img, .site-header .custom-logo-link img {
+      margin-bottom: 20px;
+  }
+}
+
+.site-footer {
+    padding: 1em 0 1em;
+    /*display: none;*/
+}
+
+.footer-widgets {
+    padding-top: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* image containers (use 25% for four, and 50% for two, etc) */
+.footer_sm_row {
+  display: flex;
+}
+
+.footer_sm_col {
+  flex: 25%;
+  padding: 5px;
+}
+
+.site-info {
+  padding: 1em 0;
+}
+
+.hentry .entry-content .has-small-font-size, .editor-styles-wrapper .has-small-font-size .candt_vid_cation {
+  font-size: .875em;
+  margin-top: -30px;
+}
+
+@media screen and (min-width: 768px){
+  .site-info {
+    margin-left: 5%;
+  }
+}
+
+/* reduce gap below events description */
+.events_block {
+  margin-bottom: -40px;
+}
+
+/* footer widget and site-info alignment on mobile */
+@media all and (max-width: 768px){
+  .site-info {
+    text-align: center;
+  }
+}
+
+/* mobile menu stuff */
+#mega-menu-wrap-handheld .mega-menu-toggle {
+    margin-bottom: 10px;
+}
+
+
+#mega-menu-wrap-handheld .mega-menu-toggle .mega-toggle-block-1 .mega-toggle-label {
+    font-size: 20px;
+    display: none;
+}
+#mega-menu-wrap-handheld .mega-menu-toggle .mega-toggle-block-2 .mega-toggle-label {
+    color: #ddd;
+    font-size: 20px;
+}
+
+#mega-menu-wrap-handheld::after {
+  margin-bottom: 20px;
+}
+
+/*
+#mega-menu-wrap-handheld #mega-menu-handheld {
+    display: none;
+}
+*/
+
+#mega-menu-wrap-handheld #mega-menu-handheld {
+    display: none;
+}
+
+@media only screen and (min-width: 769px) {
+  #mega-menu-wrap-handheld {
+    display: none !important;
+  }
+}
+
+button.menu-toggle, button.menu-toggle:hover {
+    display: none !important;
+}
+
+#mega-menu-wrap-handheld #mega-menu-handheld > li.mega-menu-item > a.mega-menu-link {
+    border-radius: 0;
+    border: 0;
+    margin: 0;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 10px;
+    background: transparent;
+    text-align: left;
+    color: #fff;
+    font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  table {
+    margin: 0 0 1.41575em 3.6em
+  }
+}
+
+table td, table th {
+    padding: 0em 1.41575em;
+    text-align: left;
+    vertical-align: top;
+}
+
+
+/* fonts */
+
+.site-branding .site-title {
+	font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, body, button, input, textarea {
+/*	font-family: 'Roboto Condensed', sans-serif;*/
+	font-family: 'Lato', sans-serif;
+}
+p,  body {
+/*	font-family: 'Roboto Condensed', sans-serif;*/
+  /*font-family: 'Lora', serif;*/
+  font-family: 'Lato', sans-serif;
+  font-size: 1.10em;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+h2 {
+  margin-top: 10px;
+  font-size: 32px;
+  /*line-height: 1;*/
+  letter-spacing: 1px;
+  /*word-spacing: 2px;*/
+  color: ;
+  font-weight: bold;
+  text-decoration: uppercase;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+h3, h4 {
+  margin-top: 10px !important;
+  font-size: 22px;
+  line-height: 1;
+  /*letter-spacing: 1px;*/
+  /*word-spacing: 2px;*/
+  font-weight: bold;
+  text-decoration: uppercase;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+/*
+h4 {
+  font-size: 23px;
+  letter-spacing: 1px;
+  color: #2c3531;
+  font-weight: bold;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+*/
+h5 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  /*word-spacing: 2px;*/
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+h6 {
+  font-size: 15px;
+  letter-spacing: 1px;
+  /*word-spacing: 2px;*/
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+
+.site-branding .site-description {
+    font-size: 1.2em;
+    margin-top: -3px;
+    color: #777;
+}
+.widget {
+    margin: 0 0 0.1em;
+}
+
+/* figure captions */
+.wp-caption .wp-caption-text {
+    text-align: right;
+    font-style: italic;
+    border-bottom: 2px solid rgba(0,0,0,.05);
+    padding: 1em 0;
+    font-size: 0.8em !important;
+}
+
+/* main menu */
+@media (min-width: 768px) {
+.main-navigation {
+    margin-top: -52px;
+    text-align: right;
+}
+}
+
+.main-navigation ul.menu > li > a,
+.main-navigation ul.nav-menu > li > a {
+  padding: 0.5em 0.3em 1.0em 0.3em;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1em;
+}
+
+.main-navigation ul li a:hover, .main-navigation ul li:hover > a, .site-title a:hover, .site-header ul.menu li.current-menu-item > a {
+    color: #000000;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-color: #aa5656;
+}
+
+/* drop-down arrow spacing */
+@media (min-width: 768px) {
+.main-navigation ul.menu > li.menu-item-has-children > a::after, .main-navigation ul.menu > li.page_item_has_children > a::after, .main-navigation ul.nav-menu > li.menu-item-has-children > a::after, .main-navigation ul.nav-menu > li.page_item_has_children > a::after {
+    margin-left: 0.4em;
+ }
+}
+
+/* drop-down menu navigation */
+.main-navigation ul.menu ul li a, .main-navigation ul.nav-menu ul li a {
+    padding: 0.1em 0.1em;
+    font-weight: 400;
+    font-size: 0.9em;
+    text-align: center;
+    text-transform: none !important;
+    line-height: 1.5em;
+    /*border-radius: 7px;*/
+}
+
+/* never display comments */
+#comments {
+   /* display: none;*/
+}
+
+/* get rid of background of drop-down menu by making it transparent*/
+.main-navigation ul.menu ul.sub-menu, .main-navigation ul.nav-menu ul.children {
+    background-color: rgba(0,0,0,0);
+}
+
+/* front page column formatting */
+.hentry .entry-content .wp-block-columns .wp-block-column:not(:last-child), .editor-styles-wrapper .wp-block-columns .wp-block-column:not(:last-child) {
+    padding-right: 0;
+    margin-right: 2%;
+}
+
+.page-template-template-homepage .type-page {
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+}
+.page-template-template-homepage:not(.has-post-thumbnail) .site-main {
+    padding-top: 0.2em;
+}
+
+.page-template-template-homepage .entry-content, .page-template-template-homepage .entry-header {
+    max-width: 50em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.no-wc-breadcrumb .site-header {
+    margin-bottom: 1em;
+}
+
+.intro_text{
+  margin-bottom: -1em;
+  margin-top: -0.5em;
+}
+
+/* left-hand (scrolling marquee) column */
+body:not(.page-template-template-fullwidth-php):not(.storefront-full-width-content) .hentry .entry-content .wp-block-columns .wp-block-column:not(:last-child), body:not(.page-template-template-fullwidth-php):not(.storefront-full-width-content) .editor-styles-wrapper .wp-block-columns .wp-block-column:not(:last-child) {
+    margin-right: 2%;
+}
+
+/* site header formatting */
+.site-branding, .site-search, .site-header-cart, .site-logo-anchor, .site-logo-link, .custom-logo-link {
+    margin-bottom: 10px;
+}
+
+/* narrow page formatting */
+.content-area-narrow {
+  max-width: 700px;
+  margin: auto;
+}
+
+
+/* ==== buttons ==== */
+
+/* standard buttons */
+.wp-block-button__link:not(.has-background) {
+  background-color: #bdbdbd;
+  border-color: #bdbdbd;
+  color: #000000;
+  font-weight: 700;
+  border-radius: 7px !important;
+}
+
+.wp-block-button__link:not(.has-background):hover {
+  background-color: #aa5656;
+  color: #ffffff;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"], .button, .widget a.button {
+    background-color: #bdbdbd;
+    border-color: #bdbdbd;
+    color: #000000;
+    border-radius: 7px;
+}
+
+button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submit"].alt, .button.alt, .widget-area .widget a.button.alt {
+  background-color: #bdbdbd;
+  border-color: #bdbdbd;
+  color: #ffffff;
+}
+
+.videoWrapper {
+  align: center;
+}
+
+/* remove box around active links */
+a:focus,
+.focus a {
+	outline: none !important;
+}
+
+/* hide blog navigation */
+.hentry .entry-header {
+    display: none;
+}
+.hentry .entry-taxonomy {
+    display: none;
+}
+
+/* padding below header */
+@media (min-width: 768px) {
+  .home.page:not(.page-template-template-homepage) .site-header, .home.post-type-archive-product .site-header {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .home.page:not(.page-template-template-homepage) .site-header, .home.post-type-archive-product .site-header {
+    margin-bottom: -20px;
+  }
+}
+
+/* change main menu text style */
+.main-navigation ul.menu,
+.main-navigation ul.nav-menu {
+    font-size: 110%;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* hide page titles */
+.entry-title{
+  display: none;
+}
+
+/* top bar styles (see also child theme's functions.php*/
+#topbar {
+  background-color: #1F1F20;
+  height: 40px;
+  line-height: 40px;
+}
+
+#topbar p {
+  color: #fff;
+}
+
+/* gigs table */
+.table {
+  table=layout: fixed;
+}
+
+.gigtdate {
+  width: 10%;
+}
+
+.gigtevent {
+  width: 90%;
+}
+
+/* align main navigation right */
+@media (min-width: 768px) {
+  .site-header .main-navigation {
+    width: 75%;
+    float: right;
+    margin-right: 5%;
+    clear: both;
+  }
+}
+
+/* set logo size and align it */
+@media screen and (min-width: 768px) {
+  .site-header .site-branding img {
+  max-width: 65%; /* Adjust this percentage up or down to make the logo larger or smaller. */
+  display: block;
+  margin-left: 0%;
+  margin-right: auto;
+  height: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .site-header .site-branding img {
+  /*max-width: 45%;*/
+  display: block;
+  margin-left: 0%;
+  margin-right: auto;
+  }
+}
+
+.site-header {
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+/* remove search box */
+.site-search {
+  display:none;
+}
+
+/* add a margin at top of page */
+.storefront-full-width-content .content-area {
+  margin-top: 10px;
+}
+
+/* keep the mobile header spacing that the (removed) WooCommerce header cart used to provide */
+@media screen and (max-width: 767px) {
+  .storefront-primary-navigation {
+    padding-bottom: 10px;
+  }
+}

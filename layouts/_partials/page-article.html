@@ -1,0 +1,14 @@
+{{- /* Context: dict "page" . "content" html */ -}}
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+<article id="post-{{ .page.Params.displayID | default .page.Params.wpID }}" class="post-{{ .page.Params.displayID | default .page.Params.wpID }} page type-page status-publish hentry">
+			<header class="entry-header">
+			<h1 class="entry-title">{{ .page.Params.displayTitle | default .page.Title }}</h1>		</header><!-- .entry-header -->
+				<div class="entry-content">
+			{{ .content }}
+					</div><!-- .entry-content -->
+		</article><!-- #post-## -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->

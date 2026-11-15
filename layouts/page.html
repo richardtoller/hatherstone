@@ -1,0 +1,2 @@
+{{ define "bodyclass" }}wp-singular page-template-default page page-id-{{ .Params.wpID }}{{ with .Params.bodyClass }} {{ . }}{{ end }}{{ end }}
+{{ define "main" }}{{ partial "page-article.html" (dict "page" . "content" .Content) }}{{ end }}
