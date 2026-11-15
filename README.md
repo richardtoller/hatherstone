@@ -5,7 +5,7 @@ Static Hugo version of hatherstone.com, migrated from WordPress (Storefront them
 ## Run locally
 
     hugo server          # http://localhost:1313
-    hugo --gc --minify   # build to ./public
+    hugo                 # build to ./public (same command Netlify runs)
 
 ## Layout
 
